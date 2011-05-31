@@ -1,0 +1,52 @@
+<lift:surround with="default" at="content">
+
+<script type="text/javascript" src="scripts/clock.js"/>
+
+<head>
+
+<script type="text/javascript">
+    $('#clockBorder').corner();
+    $('#summonsesBorder').corner();
+</script>
+
+
+<style type="text/css">
+  td.clockDigit { margin:0;padding:0;border:0 }
+</style>
+</head> 
+
+<div class="span-12"><div id="clockBorder" style="padding:20px;border:1px solid #d6d6d6;">
+  <h3 class="alt">Pomodoro</h3>
+  <div align="center" style="width: 50%; margin: auto">
+  <table id='clock' style="display: none;">
+    <tr>
+      <td class="clockDigit"><img id="digit1" src="images/0GM.png"/></td>
+      <td class="clockDigit"><img id="digit2" src="images/0GM.png"/></td>
+      <td class="clockDigit"><img id="colon"  src="images/dGM.png"/></td>
+      <td class="clockDigit"><img id="digit3" src="images/0GM.png"/></td>
+      <td class="clockDigit"><img id="digit4" src="images/0GM.png"/></td>
+    </tr>
+  </table>
+  </div>
+  <div align="center">
+   <h3><span id="message"/></h3>
+  </div>
+</div>
+</div>
+<div class="span-12 last rounded"><div id="summonsesBorder" style="padding:20px;border:1px solid #d6d6d6;">
+  <h3 class="alt">Summonses</h3>
+  <lift:comet type="PomodoroDashboard">
+    <div style="border:1px solid">
+      <ul><pomodoro:summonses/></ul>
+    </div>
+    <br/>
+    <pomodoro:summonMessageField/>
+    <br/>
+    <pomodoro:deleteAllSummons/>
+  </lift:comet>
+
+</div>
+</div>
+
+</lift:surround>
+
